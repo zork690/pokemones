@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./bootstrap5/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./indexComponent/css/estilos.css" />
+
+</head>
+
+<body class="bg-dark text-white">
+    <h1>POKEMON API</h1>
+    <a href="javascript:void(0)" onclick="pedirAyuda()">Pedir ayuda</a>
+
+    <input type="text" id="generacionInput" placeholder="Ingrese Generacion" class="form-control my-4" />
+    <button class="btn btn-primary my-4" id="registrarButton" onclick="pedirPokemonesGeneracion()">listar</button>
+
+    <input type="text" id="rangoUnoInput" placeholder="Ingrese Rango Uno" class="form-control my-4" />
+    <input type="text" id="rangoDosInput" placeholder="Ingrese Rango Dos" class="form-control my-4" />
+    <button class="btn btn-primary my-4" id="listarRangoBtn" onclick="listarPorRango()">listar</button>
+
+    <button class="btn btn-primary my-4" id="guardarPokemonBtn" onclick="guardarPokemon()">guardar pokemon</button>
+
+    <button class="btn btn-primary my-4" id="buscarPorApodoBtn" onclick="buscarPorApodo()">buscar pokemon por apodo</button>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="./bootstrap5/js/bootstrap.min.js"></script>
+        <script src="./Globales/js/objeto_ajax.js"></script>
+        <script src="./Globales/js/peticionAjax.js"></script>
+        <script src="./indexComponent/js/index.js"></script>
+    </body>
+
+    </html>
