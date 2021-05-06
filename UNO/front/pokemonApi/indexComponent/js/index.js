@@ -8,6 +8,11 @@ let generacionPokemon = $("#generacionInput");
 let rangoUno = $("#rangoUnoInput");
 let rangoDos = $("#rangoDosInput");
 
+let apodo = $("#apodoPokemonInput");
+let especie = $("#especiePokemonInput");
+
+let apodo2 = $("#apodoPokemonInput2");
+let especie2 = $("#especiePokemonInput2");
 
 
 function pedirAyuda() {
@@ -46,11 +51,8 @@ function guardarPokemon() {
 	url = "/guardar";
 	urlCompleta = SERVIDOR + url;
 	let obj = {
-        apodo: "MICHI",
-        especie: "MAGICO",
-        ataque: 114,
-        defensa: 1234,
-        salud: 345
+        apodo: apodo.val(),
+        especie: especie.val()
 };
 	console.log("GUARDANDO POKEMON: ",obj);
 	console.log(urlCompleta);
@@ -67,9 +69,26 @@ function buscarPorApodo() {
 	url = "/buscarPorApodo";
 	urlCompleta = SERVIDOR + url;
 	let obj = {
-        apodo: "MICHI"
+        apodo: apodo2.val()
 };
 	console.log("BUSCANDO POKEMON POR APODO: ",obj);
+	console.log(urlCompleta);
+	peticionAjax("POST", urlCompleta, obj).then((respuesta) => {
+		console.log(JSON.parse(respuesta));
+		
+	}).catch((error) => {
+		console.log(error);
+		
+	});
+}
+
+function buscarPorEspecie() {
+	url = "/buscarPorEspecie";
+	urlCompleta = SERVIDOR + url;
+	let obj = {
+        especie: especie2.val()
+};
+	console.log("BUSCANDO POKEMON POR ESPECIE: ",obj);
 	console.log(urlCompleta);
 	peticionAjax("POST", urlCompleta, obj).then((respuesta) => {
 		console.log(JSON.parse(respuesta));

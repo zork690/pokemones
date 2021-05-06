@@ -40,7 +40,7 @@ public class RestControllerClass {
 	public ResponseEntity<?> guardar(@RequestBody Pokemon pokemon) {
 		log.error("GUARDANDO POKEMON: "+pokemon);
 		this.pokemonService.guardarPokemon(pokemon);
-		return ResponseEntity.ok("POKEMON GUARDADO");
+		return ResponseEntity.ok(this.pokemonService.buscarPorApodo(pokemon.getApodo()));
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
